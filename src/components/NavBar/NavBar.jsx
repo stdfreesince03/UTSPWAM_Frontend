@@ -26,7 +26,7 @@ export default function NavBar() {
                     <nav>
                         <ul className="nav-list">
                             <div className="logo">
-                                <img src="../../../public/logos/logo_main.png" alt="Logo" />
+                                <img src="/logos/logo_main.png" alt="Logo" />
                             </div>
                             <div className="nav-list nav-links">
                                 <li><Link to="/home" className="nav-link">Home</Link></li>
