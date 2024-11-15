@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import '../styles/SignUp.css';
 import { Form } from "react-router-dom";
 import api from '../services/axios.js';
@@ -76,7 +76,7 @@ function SignUpPage() {
                 </Form>
 
                 <p className="signup-footer">
-                    Already have an account? <a href="/src/pages/Login">Log In</a>
+                    Already have an account? <Link to="/login">Log In</Link>
                 </p>
             </div>
         </div>

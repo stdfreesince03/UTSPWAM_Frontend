@@ -59,7 +59,7 @@ export default function NavBar() {
                 <div className="sidebar-container">
                     <ul className="sidebar">
                         <li><a id="sidebar-close" onClick={() => toggleSideBar(false)}>
-                            <img src="../../../public/logos/sidebarX.svg" alt="SideBarClose" />
+                            <img src="/logos/sidebarX.svg" alt="SideBarClose" />
                         </a></li>
                         <li><Link to="/home" className="nav-link">Home</Link></li>
                         <li><Link to="/courses" className="nav-link">Courses</Link></li>
