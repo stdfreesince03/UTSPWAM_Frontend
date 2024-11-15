@@ -1,0 +1,34 @@
+/* CSS for BackNav */
+.back-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly visible background */
+    backdrop-filter: blur(8px); /* Adds a subtle blur for better visibility */
+    z-index: 1000; /* Ensures it stays on top of the lab content */
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Make it more visible when hovered */
+.back-nav:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Back arrow style */
+.back-arrow {
+    font-size: 1.5rem;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+    color: #9f79e6; /* Color change on hover */
+}

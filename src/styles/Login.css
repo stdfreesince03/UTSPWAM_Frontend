@@ -1,0 +1,43 @@
+/* src/pages/LoginPage.css */
+
+.login-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem;
+    background-color: #f7f7f8;
+    gap: 14rem; /* Increase gap to add more space between the sections */
+    min-height: 100vh;
+}
+
+.testimonials-section {
+    flex: 1;
+    max-width: 500px;
+}
+
+.login-box-section {
+    flex: 1;
+    max-width: 400px;
+}
+
+@media (max-width: 1200px) {
+    .login-page-container {
+        gap: 4rem; /* Adjusts gap for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .login-page-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 1.5rem;
+        gap: 1.5rem; /* Smaller gap on mobile */
+    }
+
+    .testimonials-section,
+    .login-box-section {
+        max-width: 100%;
+        margin: 0;
+        padding: 1rem;
+    }
+}

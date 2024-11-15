@@ -1,0 +1,129 @@
+.container-contact-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.contact-header {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    color: #9f79e6;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align:center;
+}
+
+.contact-content {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.send-message {
+    display: block;
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #9f79e6;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.send-message:hover {
+    background-color: #8b6fd1;
+}
+
+.contact-info {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+    font-size: 2rem;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 1rem;
+    color: #9f79e6;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+}

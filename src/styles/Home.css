@@ -1,0 +1,684 @@
+
+
+.home-page #slogan-main-nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 0;
+    min-height: 20vh;
+    width:100vw;
+    margin-top: 0;
+    margin-bottom: -0.5rem;
+    background-color: #f3f0f8;
+    left:-3.75rem;
+}
+
+
+.home-page .slogan {
+    margin-bottom: 1.5rem;
+}
+
+.home-page{
+    text-align: center;
+    padding: 0 3.5rem;
+
+}
+
+#stock-home-img{
+    position: relative;
+    top:5rem;
+    width:40%;
+    height:auto;
+    align-self: center;
+    padding-left: 2rem;
+    min-width: 200px;
+}
+
+.home-page h1 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+}
+
+.home-page .highlight {
+    color: #bb99fe;
+    font-weight: bold;
+}
+
+.home-page .subtitle {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.home-page .description {
+    font-size: 1rem;
+    color: #333;
+    margin: 1rem 0 2rem 0;
+}
+
+
+/* Buttons */
+.home-page .main-nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.carousel-embed{
+    background-color:#f7f7f8;;
+    padding: 4.5rem 8rem 2.5rem;
+}
+
+.home-page .btn {
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.home-page .btn.explore {
+    background-color: #9f79e6;
+    color: white;
+}
+
+.home-page .btn.explore:hover {
+    background-color: #9f79e6;
+}
+
+.home-page .btn.pricing {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+#sparkle-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#slogan-sparkle {
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    width: 2.5rem;
+    z-index: 1;
+}
+
+@media (max-width: 566px) {
+    #slogan-sparkle {
+        width: 2rem;
+        top: -2rem;
+        left: 2.5rem;
+    }
+}
+
+.main-slogan {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.6rem 0.25rem 0.8rem;
+
+}
+
+.dyn-contain{
+    display: flex;
+    flex-direction: column;
+}
+
+.lightning-icon {
+    width: 2.5rem;
+    margin-right: 0.5rem;
+    align-self: center;
+}
+
+.home-page .btn.pricing:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 463px) {
+    #stock-home-img{
+        width:80vw;
+    }
+}
+@media(max-width:613px){
+    #stock-home-img{
+        left:-0.5rem;
+    }
+}
+
+@media (max-width: 744px) {
+
+    #stock-home-img {
+        width:100%;
+    }
+}
+@media (max-width: 744px) {
+
+    #stock-home-img {
+        padding-left: 1rem;
+        width:80%;
+    }
+}
+@media (max-width: 768px) {
+    .home-page h1 {
+        font-size: 2rem;
+    }
+    .home-page .subtitle {
+        font-size: 1.2rem;
+    }
+    .home-page .description {
+        font-size: 0.9rem;
+    }
+    .home-page .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    #stock-home-img {
+        width:60%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .home-page h1 {
+        font-size: 1.5rem;
+    }
+    .home-page .subtitle {
+        font-size: 1rem;
+    }
+    .home-page .description {
+        font-size: 0.8rem;
+    }
+    .home-page .main-nav-buttons {
+        flex-direction: column;
+    }
+    .home-page .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+
+@media (min-width: 2000px) {
+    .home-page h1 {
+        font-size: 4.5rem;
+    }
+    .home-page .subtitle {
+        font-size: 2.7rem;
+    }
+    .home-page .description {
+        font-size: 1.8rem;
+    }
+    .home-page .btn {
+        padding: 1.6rem 4rem;
+        font-size: 1.76rem;
+    }
+}
+.home-content-wrapper{
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+}
+.benefits-section {
+    padding: 2rem 1.5vw;
+    margin-top: 5rem;
+    background-color: #f7f7f8;
+    width:100%;
+
+}
+
+.benefits-header {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.benefits-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.benefits-header p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+    text-align: left;
+}
+
+
+.view-all-btn:hover {
+    background-color: #444;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width:100%;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display:flex;
+    flex-direction: column;
+
+}
+
+.benefit-card:hover {
+    transform: translate(-5px,-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #9f79e6;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.benefit-card h3 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.benefit-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.benefit-icon {
+    font-size: 1.2rem;
+    color: #9f79e6;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.benefit-icon:hover {
+    transform: scale(1.2);
+}
+
+
+@media (max-width: 1024px) {
+    .benefits-header h2 {
+        font-size: 1.85rem;
+    }
+
+    .benefits-header p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits-header {
+        text-align: center;
+    }
+
+    .benefits-header h2 {
+        font-size: 2rem;
+    }
+
+    .benefits-header p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-header h2 {
+        font-size: 2rem;
+    }
+
+    .benefits-header p {
+        font-size: 0.8rem;
+    }
+}
+
+#courses {
+    background-color: #f7f7f8;
+    padding: 2rem 1.5vw 0;
+}
+
+.courses-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.course-section-title {
+    font-size: 1.85rem;
+    font-weight: bold;
+    margin: 0 0 1rem;
+}
+
+.courses-description {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666;
+    text-align: left;
+}
+
+.view-all-btn {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.85rem;
+    background-color: white;
+    color: black;
+    border: none;
+    margin-top: 1.25rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.view-all-btn:hover {
+    background-color: white;
+    border: 0.0001rem solid #9f79e6;
+}
+
+.courses-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    min-width: 200px;
+    margin: auto;
+}
+
+.course-card {
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.course-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.course-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.course-main {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-info {
+    padding: 1rem;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.course-details {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.course-details span {
+    white-space: nowrap;
+}
+
+/*.course-details span + span::before {*/
+/*    content: '|';*/
+/*    margin: 0 0.5rem;*/
+/*}*/
+
+.course-details span:last-child::before {
+    display: none;
+}
+
+.course-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.course-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.get-it-now {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9f79e6;
+    color: white;
+    width: 100%;
+    height: 2.5rem; /* Updated from 0.75rem for better button sizing */
+    max-height: 3rem;
+    border-radius: 0.15rem;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+}
+
+.get-it-now:hover {
+    background-color: #7d5fc9;
+}
+
+@media (max-width: 782px) {
+    .courses-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .view-all-btn {
+        font-size: 0.75rem;
+    }
+
+    .course-details {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 508px) {
+    .courses-list {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .courses-description {
+        font-size: 0.85rem;
+    }
+
+    .view-all-btn {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .course-details {
+        font-size: 0.75rem;
+    }
+}
+.pricing-section {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    background-color: #f7f7f8;
+    margin: 0 auto auto;
+    width:100%;
+    min-width: 100%;
+}
+
+.pricing-header h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color, #333);
+}
+
+.pricing-header p {
+    margin-bottom: 2rem;
+    color: var(--text-color, #666);
+}
+
+.pricing-toggle {
+    display: flex;
+    width:100%;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.toggle-btn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #ece5f9, #d9d3f5); /* Whitish purple gradient */
+    color: #5c5a72; /* Soft purple text color */
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s, color 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.toggle-btn.active {
+    background: linear-gradient(135deg, #d3c4f3, #b9a7eb); /* Slightly darker purple gradient for active state */
+    color: white;
+}
+
+.toggle-btn:hover {
+    background: linear-gradient(135deg, #d5c6f4, #c4b2f1); /* Slightly more vibrant hover color */
+    transform: translateY(-2px); /* Elevation effect */
+    color: #4a47a3; /* Darker purple text on hover */
+}
+
+.toggle-btn:not(.active):hover {
+    background: linear-gradient(135deg, #ece5f9, #d9d3f5); /* Keeps the non-hovered button pale */
+    color:#4a47a3; /* Keeps the non-hovered button text color pale */
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.pricing-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: calc(50% - 0.75rem); /* Half width minus half the gap */
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+@media (max-width: 768px) {
+    .pricing-cards {
+        width: 100%;
+        padding:0;
+    }
+
+    .pricing-card {
+        min-width: 100%;
+        margin: 0; /* Ensure no extra margins */
+    }
+}
+
+
+
+.card-header {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: #f3f0f8;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: var(--heading-color, #333);
+}
+
+.card-price {
+    font-size: 1em;
+    margin: 1rem 0;
+    color: #b08be9;
+}
+
+#price-1,#price-2{
+    font-size: 1.75em;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.features-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 0.9em;
+}
+
+.btn.primary-btn {
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem;
+    background-color: #b08be9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn.primary-btn:hover {
+    background-color: #a27fe8;
+}
+

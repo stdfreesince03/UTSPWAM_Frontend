@@ -1,0 +1,51 @@
+.footer {
+  background-color: white;
+  padding: 0.5rem 1vw; // Reduced padding
+  color: #444;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+  }
+
+  &-column {
+    flex: 1;
+    margin: 0.5rem 1rem; 
+  
+
+    h4 {
+      color: #9f79e6;
+      margin-bottom: 0.5rem; 
+    }
+
+    p,
+    a {
+      color: #666;
+      font-size: 0.85rem; 
+      margin: 0.2rem 0; 
+      text-decoration: none;
+
+      &:hover {
+        color: #9f79e6;
+      }
+    }
+    a{
+      display:block;
+    }
+  }
+
+  &-bottom {
+    width: 100vw;
+    margin-top: 0.5rem; // Reduced margin
+    font-size: 0.75rem; // Slightly smaller font
+    color: #888;
+    text-align: center;
+  }
+}

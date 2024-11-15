@@ -1,0 +1,181 @@
+/* src/styles/SignUpPage.css */
+
+.signup-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f8;
+    padding: 2rem;
+}
+
+.signup-box {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.signup-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6a5b98;
+    margin-bottom: 0.5rem;
+}
+
+.signup-subtitle {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-input {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+.signup-input:focus {
+    outline: none;
+    border-color: #9f79e6;
+    box-shadow: 0 0 0 2px rgba(159, 121, 230, 0.3);
+}
+
+.signup-options {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.terms {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.terms a {
+    color: #9f79e6;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+.signup-button {
+    background-color: #9f79e6;
+    color: white;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 1rem; /* Add spacing below the toggle */
+}
+
+.signup-button:hover {
+    background-color: #8b6fd1;
+}
+
+.or-divider {
+    margin: 1.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #666;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.google-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+
+.google-button:hover {
+    background-color: #f1f1f1;
+}
+
+.signup-footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.signup-footer a {
+    color: #9f79e6;
+    text-decoration: none;
+}
+
+.signup-footer a:hover {
+    text-decoration: underline;
+}
+
+#google-oauth-icon {
+    width: 2em;
+    margin-right: 1.5em;
+    height: auto;
+}
+
+/* New styles for role toggle */
+.role-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem; /* Space between toggle and the button */
+}
+
+.role-label {
+    font-size: 1rem;
+    color: #333;
+    margin-right: 10px;
+}
+
+.toggle-switch {
+    width: 40px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch .toggle-slider {
+    width: 18px;
+    height: 18px;
+    background-color: #6a5b98;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch.active {
+    background-color: #9f79e6;
+}
+
+.toggle-switch.active .toggle-slider {
+    transform: translateX(20px);
+}

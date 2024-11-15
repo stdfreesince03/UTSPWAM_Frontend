@@ -1,0 +1,75 @@
+.carouselContainer {
+    background-color: #f7f7f8;
+    margin:auto;
+    overflow: hidden;
+}
+
+.carousel {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    margin: 6rem auto 1.25rem;
+    padding: 0.5rem;
+    border-radius: 0.35rem;
+    border: 0.2rem solid #bb99fe;
+    background-color: #f7f7f8;
+    min-width: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carouselTrack {
+    display: flex;
+    width: max-content;
+    animation: scroll 10s linear infinite;
+}
+
+.carouselSlide {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-right: 2rem;
+}
+
+.carouselSlide img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.separator {
+    width: 0.05em;
+    height: 5em;
+    background-color: #9f79e6;
+    opacity: 0.6;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .carouselSlide {
+        gap: 1rem;
+        padding-right: 1rem;
+    }
+
+    .carouselSlide img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    .carouselSlide {
+        gap: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .carouselSlide img {
+        height: 30px;
+    }
+}

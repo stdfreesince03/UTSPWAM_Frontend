@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Jumping Over a Ridge</title>
+    <link rel="stylesheet" href="./lab_1.css">
+</head>
+<body>
+<main>
+    <h1 id="gameHeader">Car Jumping Over a Ridge</h1>
+    <div class="game">
+        <div id="controls">
+            <label>Select Car :
+                <input type="range" id="carSelect" min="1" max="6" step="1" value="1">
+            </label>
+            <img id="carImage" src="/images/car_1.png" alt="Selected Car">
+            <span id="carName">Car 1</span>
+            <label id="speedLabel">Speed:
+                <input type="range" id="speed" min="10" max="500" step="1" value="50"> km/h
+            </label>
+            <div>Speed: <span id="speedValue">50</span> km/h</div>
+            <button id="startButton">Start</button>
+        </div>
+        <canvas id="jumpCanvas"></canvas>
+    </div>
+</main>
+<script src="/labs/lab_1/lab_1.js"></script>
+</body>
+</html>
