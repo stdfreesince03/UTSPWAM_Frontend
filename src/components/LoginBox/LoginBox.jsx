@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Form, useNavigate} from 'react-router-dom';
+import {Form, Link, useNavigate} from 'react-router-dom';
 import './LoginBox.css';
 import {useDispatch} from "react-redux";
 import {handleGoogleLogin, login} from "../../services/authservices.js";
@@ -65,7 +65,7 @@ export default function LoginBox() {
             </button>
 
             <div className="auth-footer">
-                Don't have an account? <a href="/signup">Sign up</a>
+                Don't have an account? <Link to="/signup">Sign up</Link>
             </div>
         </div>
     );
