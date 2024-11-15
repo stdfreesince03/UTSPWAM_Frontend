@@ -11,9 +11,9 @@ export default function HomePage() {
                 <section id="slogan-main-nav">
                     <div className="slogan">
                         <div id="sparkle-container">
-                            <img src="../../public/logos/slogan-sparkle.png" id="slogan-sparkle" alt="Icon" className="icon" />
+                            <img src="/logos/slogan-sparkle.png" id="slogan-sparkle" alt="Icon" className="icon" />
                             <div className="main-slogan">
-                                <img src="../../public/logos/slogan-lightning.png" alt="LightningImg" className="lightning-icon" />
+                                <img src="/logos/slogan-lightning.png" alt="LightningImg" className="lightning-icon" />
                                 <h1><span className="highlight">Unlock</span> Your Creative Potential</h1>
                             </div>
                         </div>
@@ -28,7 +28,7 @@ export default function HomePage() {
 
                 <Carousel/>
 
-                <img id='stock-home-img' src="../../public/images/stock_home.png" alt="Stock_Home" />
+                <img id='stock-home-img' src="/images/stock_home.png" alt="Stock_Home" />
 
                 <div className="home-content-wrapper">
                     <section className="benefits-section">
@@ -97,7 +97,7 @@ export default function HomePage() {
                         <div className="courses-list">
 
                             <div className="course-card">
-                                <img className="course-image" src="../../public/images/web_design.png"
+                                <img className="course-image" src="/images/web_design.png"
                                      alt="Web Design Fundamentals"/>
                                 <div className="course-info">
                                     <div className="course-details">
@@ -118,7 +118,7 @@ export default function HomePage() {
 
 
                             <div className="course-card">
-                                <img className="course-image" src="../../public/images/ui_ux_design.png"
+                                <img className="course-image" src="/images/ui_ux_design.png"
                                      alt="UI/UX Design"/>
                                 <div className="course-info">
                                     <div className="course-details">
@@ -138,7 +138,7 @@ export default function HomePage() {
                             </div>
 
                             <div className="course-card">
-                                <img className="course-image" src="../../public/images/mobil_app_dev.png"
+                                <img className="course-image" src="/images/mobil_app_dev.png"
                                      alt="Mobile App Development"/>
                                 <div className="course-info">
                                     <div className="course-details">
@@ -157,7 +157,7 @@ export default function HomePage() {
                             </div>
 
                             <div className="course-card">
-                                <img className="course-image" src="../../public/images/graphic_design.png"
+                                <img className="course-image" src="/images/graphic_design.png"
                                      alt="Graphic Design for Beginners"/>
                                 <div className="course-info">
                                     <div className="course-details">
@@ -179,7 +179,7 @@ export default function HomePage() {
 
 
                             <div className="course-card">
-                                <img className="course-image" src="../../public/images/front_end_web.png"
+                                <img className="course-image" src="/images/front_end_web.png"
                                      alt="Front-End Web Development"/>
                                 <div className="course-info">
                                     <div className="course-details">
@@ -201,7 +201,7 @@ export default function HomePage() {
 
 
                             <div className="course-card">
-                                <img className="course-image" src="../../public/images/adv_js.png"
+                                <img className="course-image" src="/images/adv_js.png"
                                      alt="Advanced JavaScript"/>
                                 <div className="course-info">
                                     <div className="course-details">
