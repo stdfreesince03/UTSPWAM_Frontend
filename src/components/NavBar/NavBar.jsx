@@ -50,7 +50,7 @@ export default function NavBar() {
                             )}
                         </div>
                         <a onClick={() => toggleSideBar(true)} id="hamburger-dropdown">
-                            <img src="../../../public/logos/hamburger.svg" alt="SidebarDropdown" />
+                            <img src="/logos/hamburger.svg" alt="SidebarDropdown" />
                         </a>
                     </div>
                 </div>
