@@ -15,18 +15,18 @@ export const login = async (email, password, role, dispatch, navigate) => {
 
         if (data.user) {
             console.log('Login Successful');
-            dispatch(updateIsLoggedIn()); // Update Redux state
-            navigate('/'); // Redirect after successful login
+            dispatch(updateIsLoggedIn());
+            navigate('/');
         }
 
-        return data; // Optionally return data if needed
+        return data;
     } catch (error) {
         if (error.response) {
             console.log(error.response.data.error);
         } else {
             console.log("An unexpected error occurred.");
         }
-        throw error; // Rethrow the error to handle in the calling function if needed
+        throw error;
     }
 };
 
@@ -36,15 +36,15 @@ export const logout = async (dispatch, navigate) => {
             withCredentials: true,
         });
 
-        dispatch(updateIsLoggedIn()); // Update Redux state to logged out
-        navigate('/login'); // Redirect to login page after logout
+        dispatch(updateIsLoggedIn());
+        navigate('/login');
     } catch (error) {
         console.error("Error during logout:", error);
-        throw error; // Rethrow to handle if needed
+        throw error;
     }
 };
 
-// src/services/authServices.js
+
 export const signUp = async (firstName, lastName, email, password, role, dispatch, navigate) => {
     try {
         const { data } = await api.post('/signup', {
@@ -55,7 +55,7 @@ export const signUp = async (firstName, lastName, email, password, role, dispatc
             role,
         }, {
             headers: {
-                'Content-Type': 'application/json', // Add this header to be explicit about JSON format
+                'Content-Type': 'application/json',
             }
         });
 
