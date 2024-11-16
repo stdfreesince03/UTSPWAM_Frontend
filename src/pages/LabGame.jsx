@@ -19,9 +19,11 @@ const LabGame = () => {
                         ,withCredentials: true
                     }
                 );
-                setInitialScore(response.data.score || 0);
-                handleGameData({ score: response.data.score || 0, lab_id: labID });
+                const fetchedScore = response.data.score || 0;
+                setInitialScore(fetchedScore);
+                handleGameData({ score: fetchedScore, lab_id: labID });
 
+                // Send the initial score to the iframe
                 const iframe = document.getElementById('lab-iframe');
                 if (iframe && iframe.contentWindow) {
                     iframe.contentWindow.postMessage({ score: fetchedScore }, window.location.origin);
