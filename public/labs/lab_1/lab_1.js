@@ -138,7 +138,7 @@ function checkCollisions() {
 
     if (gameState.position.x >= ledgeX2 &&
         carRight <= ledgeX2 + ledgeWidth2 &&
-        carBottom  >= (ledgeY2+(gameState.carSize.height/4)) &&
+        carBottom  >= (ledgeY2+(gameState.carSize.height/2)) &&
         gameState.velocity.y > 0) {
 
         gameState.position.y = ledgeY2 - gameState.carSize.height;
