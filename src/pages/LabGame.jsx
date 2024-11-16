@@ -1,20 +1,37 @@
-import { useParams } from 'react-router-dom';
+import {useOutletContext, useParams} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const LabGame = () => {
-    const { labID } = useParams();
+    const {handleGameData} = useOutletContext();
     const [isLoading, setIsLoading] = useState(true);
+    const {labID} = useParams();
+
     useEffect(() => {
         const iframe = document.getElementById('lab-iframe');
         const handleLoad = () => {
-
             setIsLoading(false);
         }
+        const handleMessage = (event) => {
+            if (event.origin === window.location.origin) {
+                const data = {...event.data,lab_id:labID}
+                console.log('handleMessage:LabGame exec : ',data);
+                handleGameData(data);
+            }
+        };
 
         if (iframe) {
             iframe.addEventListener('load', handleLoad);
         }
-    }, [labID]);
+
+        window.addEventListener('message',handleMessage);
+
+        return ()=>{
+            window.removeEventListener('message', handleMessage);
+            iframe.removeEventListener('load', handleLoad);
+        }
+
+
+    }, [labID,handleGameData]);
 
     return (
         <div style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden' }}>

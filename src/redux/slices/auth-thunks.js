@@ -6,7 +6,7 @@ const updateIsLoggedIn = createAsyncThunk(
     async () => {
         const response = await api.get('/auth/check',{withCredentials:true});
         console.log("data.loggedin:" ,response.data.isLoggedIn);
-        return response.data.isLoggedIn;
+        return response.data;
     }
 );
 

@@ -180,6 +180,7 @@ function endGame(status) {
         console.log('Car crashed! Restarting...');
     }
 
+    window.parent.postMessage({score},'*');
     restartGame();
 }
 

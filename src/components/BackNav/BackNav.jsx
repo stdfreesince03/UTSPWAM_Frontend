@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './BackNav.css';
 import {useNavigate} from "react-router-dom";
 
-const BackNav = () => {
+const BackNav = ({onReturn}) => {
     const [isVisible, setIsVisible] = useState(false);
     const navigate = useNavigate();
 
@@ -15,6 +15,14 @@ const BackNav = () => {
         }
     };
 
+    const handleBackClick = () => {
+        if (onReturn) {
+            onReturn(); // Call onReturn function if it exists
+        }
+        navigate(-1); // Navigate back
+    };
+
+
     useEffect(() => {
         window.addEventListener('mousemove', handleMouseMove);
         return () => {
@@ -24,7 +32,9 @@ const BackNav = () => {
 
     return (
         <div className={`back-nav ${isVisible ? 'visible' : ''}`}>
-            <button className="back-arrow" onClick={()=>navigate(-1)}>←</button>
+            <button className="back-arrow" onClick={
+                ()=>handleBackClick()
+            }>←</button>
         </div>
     );
 };
