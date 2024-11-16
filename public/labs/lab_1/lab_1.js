@@ -83,7 +83,6 @@ function preloadCarImage() {
 }
 
 
-
 function drawGrassyLedge() {
     ctx.fillStyle = '#228B22';
     ctx.fillRect(ledgeX1, ledgeY1, ledgeWidth1, ledgeHeight1);
@@ -165,7 +164,8 @@ function initiateJump() {
 function drawScore() {
     ctx.font = '20px Arial';
     ctx.fillStyle = '#333';
-    ctx.fillText(`Score: ${score}`, canvas.width - 100, 30);
+    ctx.textAlign = 'right';
+    ctx.fillText(`Score: ${score}`, canvas.width / 2 - 20, 40); // Adjust this position if needed
 }
 
 function endGame(status) {
