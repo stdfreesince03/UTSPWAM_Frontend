@@ -7,6 +7,7 @@ window.addEventListener('message', (event) => {
     if (event.origin === window.location.origin && event.data.score !== undefined) {
         score = event.data.score;
         console.log('Initial score received:', score);
+        drawScene();
     }
 });
 
@@ -250,7 +251,7 @@ function positionCarOnLedge() {
     };
     gameState.velocity = { x: 0, y: 0 };
     gameState.phase = 'ready';
-    drawScene();
+    // drawScene();
 }
 
 
