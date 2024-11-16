@@ -1,37 +1,49 @@
-import {useOutletContext, useParams} from 'react-router-dom';
+import { useOutletContext, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import api from '../services/axios';  // Import your axios instance
 
 const LabGame = () => {
-    const {handleGameData} = useOutletContext();
+    const { handleGameData } = useOutletContext();
     const [isLoading, setIsLoading] = useState(true);
-    const {labID} = useParams();
+    const [initialScore, setInitialScore] = useState(null);
+    const { labID } = useParams();
 
     useEffect(() => {
-        const iframe = document.getElementById('lab-iframe');
-        const handleLoad = () => {
-            setIsLoading(false);
-        }
-        const handleMessage = (event) => {
-            if (event.origin === window.location.origin) {
-                const data = {...event.data,lab_id:labID}
-                console.log('handleMessage:LabGame exec : ',data);
-                handleGameData(data);
+        // Fetch the initial score for this lab
+        const fetchScore = async () => {
+            try {
+                const response = await api.get(`/progress/${labID}`, { withCredentials: true });
+                setInitialScore(response.data.score || 0);
+                handleGameData({ score: response.data.score || 0, lab_id: labID });
+            } catch (error) {
+                console.error('Error fetching initial score:', error);
             }
         };
 
-        if (iframe) {
-            iframe.addEventListener('load', handleLoad);
-        }
+        fetchScore();
 
-        window.addEventListener('message',handleMessage);
 
-        return ()=>{
+        const iframe = document.getElementById('lab-iframe');
+        const handleLoad = () => {
+            setIsLoading(false);
+        };
+        const handleMessage = (event) => {
+            if (event.origin === window.location.origin) {
+                const data = { ...event.data, lab_id: labID };
+                console.log('Received data from iframe:', data);
+                setInitialScore(data.score);
+                handleGameData(data); // Send updated score to parent
+            }
+        };
+
+        if (iframe) iframe.addEventListener('load', handleLoad);
+        window.addEventListener('message', handleMessage);
+
+        return () => {
+            if (iframe) iframe.removeEventListener('load', handleLoad);
             window.removeEventListener('message', handleMessage);
-            iframe.removeEventListener('load', handleLoad);
-        }
-
-
-    }, [labID,handleGameData]);
+        };
+    }, [labID, handleGameData]);
 
     return (
         <div style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden' }}>

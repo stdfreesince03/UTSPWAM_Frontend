@@ -1,7 +1,15 @@
 
 const canvas = document.getElementById('jumpCanvas');
 const ctx = canvas.getContext('2d');
+
 let score = 0;
+window.addEventListener('message', (event) => {
+    if (event.origin === window.location.origin && event.data.score !== undefined) {
+        score = event.data.score;
+        console.log('Initial score received:', score);
+    }
+});
+
 
 function setHighDPI(canvas, context, scaleFactor = 2) {
     const originalWidth = canvas.width;
