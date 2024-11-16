@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById('jumpCanvas');
 const ctx = canvas.getContext('2d');
 let score = 0;
@@ -15,6 +16,8 @@ function setHighDPI(canvas, context, scaleFactor = 2) {
     recalculateLedgePositions();
 }
 
+
+
 let ledgeWidth1, ledgeX1, ledgeHeight1, ledgeY1;
 let ledgeWidth2, ledgeX2, ledgeHeight2, ledgeY2;
 
@@ -30,7 +33,9 @@ function recalculateLedgePositions() {
     ledgeY2 = canvas.height / 2 - ledgeHeight2;
 }
 
+
 setHighDPI(canvas, ctx);
+
 
 const carSelect = document.getElementById('carSelect');
 const speedSlider = document.getElementById('speed');
@@ -48,6 +53,7 @@ const cars = [
     { name: 'Car 6', mass: 2000, image: 'car_6.png', jumpForce: 7 }
 ];
 
+
 const GRAVITY = 9.81;
 let gameState = {
     speed: 0,
@@ -58,9 +64,9 @@ let gameState = {
     phase: 'ready',
     lastTimestamp: 0,
     carSize: { width: 0, height: 0 },
-    initialSpeed: 0,
-    hasLanded: false  // New flag to track if car has successfully landed
+    initialSpeed: 0
 };
+
 
 let carImg = new Image();
 
@@ -75,6 +81,7 @@ function preloadCarImage() {
         drawScene();
     };
 }
+
 
 function drawGrassyLedge() {
     ctx.fillStyle = '#228B22';
@@ -91,8 +98,14 @@ function drawScene() {
     drawGrassyLedge();
     drawScore();
 
-    drawCar(gameState.position.x, gameState.position.y);
+
+    if (gameState.position.x < canvas.width) {
+        drawCar(gameState.position.x, gameState.position.y);
+    } else {
+        endGame('success');
+    }
 }
+
 
 function updatePhysics(deltaTime) {
     switch (gameState.phase) {
@@ -111,10 +124,10 @@ function updatePhysics(deltaTime) {
             checkCollisions();
             break;
 
+        case 'landing':
         case 'driving':
-            if (gameState.hasLanded) {
-                gameState.position.x += gameState.initialSpeed * deltaTime;
-            }
+
+            gameState.position.x += gameState.initialSpeed * deltaTime;
             break;
     }
 }
@@ -122,42 +135,26 @@ function updatePhysics(deltaTime) {
 function checkCollisions() {
     const carBottom = gameState.position.y + gameState.carSize.height;
     const carRight = gameState.position.x + gameState.carSize.width;
-    const carLeft = gameState.position.x;
 
-    // Only check for crashes if we're in the jumping phase
-    if (gameState.phase === 'jump') {
-        // First check for successful landing on second ledge
-        if (gameState.velocity.y > 0 && // Moving downward
-            carBottom >= ledgeY2 && // At or below ledge height
-            carLeft >= ledgeX2 && // Left edge past start of ledge
-            carRight <= ledgeX2 + ledgeWidth2) { // Right edge before end of ledge
+    if (gameState.position.x >= ledgeX2 &&
+        carRight <= ledgeX2 + ledgeWidth2 &&
+        carBottom >= ledgeY2 &&
+        gameState.velocity.y > 0) {
 
-            // Successfully landed
-            gameState.position.y = ledgeY2 - gameState.carSize.height;
-            gameState.velocity.y = 0;
-            gameState.velocity.x = gameState.initialSpeed;
-            gameState.phase = 'driving';
-            gameState.hasLanded = true;
-        }
-        // Only check for crash if we've passed the first ledge completely
-        else if (carLeft > ledgeWidth1 && ( // Past first ledge
-            carBottom > canvas.height || // Hit the ground
-            (carBottom > ledgeY2 + ledgeHeight2 && // Fell below second ledge
-                carLeft > ledgeX2 + ledgeWidth2))) { // And passed it completely
-
-            endGame('crash');
-        }
+        gameState.position.y = ledgeY2 - gameState.carSize.height;
+        gameState.velocity.y = 0;
+        gameState.velocity.x = gameState.initialSpeed;
+        gameState.phase = 'driving';
     }
 
-    // Check for success only if we're driving on the second ledge
-    if (gameState.phase === 'driving' && carLeft > canvas.width) {
-        endGame('success');
+
+    if (carBottom > canvas.height) {
+        endGame('crash');
     }
 }
 
-
 function initiateJump() {
-    const jumpAngle = Math.PI / 4;
+    const jumpAngle = Math.PI / 4; // 45 degrees
     const jumpSpeed = gameState.selectedCar.jumpForce;
 
     gameState.velocity.x = gameState.speed;
@@ -168,7 +165,7 @@ function drawScore() {
     ctx.font = '20px Arial';
     ctx.fillStyle = '#333';
     ctx.textAlign = 'right';
-    ctx.fillText(`Score: ${score}`, canvas.width / 2 - 20, 40);
+    ctx.fillText(`Score: ${score}`, canvas.width / 2 - 20, 40); // Adjust this position if needed
 }
 
 function endGame(status) {
@@ -189,10 +186,10 @@ function endGame(status) {
 function restartGame() {
     speedSlider.disabled = false;
     carSelect.disabled = false;
-    gameState.hasLanded = false;  // Reset landing flag
     positionCarOnLedge();
     gameState.phase = 'ready';
 }
+
 
 function startJump() {
     if (gameState.isJumping) return;
@@ -202,7 +199,6 @@ function startJump() {
     gameState.initialSpeed = parseFloat(speedSlider.value) * (1000 / 3600);
     gameState.speed = gameState.initialSpeed;
     gameState.lastTimestamp = performance.now();
-    gameState.hasLanded = false;
 
     speedSlider.disabled = true;
     carSelect.disabled = true;
@@ -223,6 +219,7 @@ function gameLoop(timestamp) {
         requestAnimationFrame(gameLoop);
     }
 }
+
 
 function updateCarSelection() {
     gameState.selectedCar = cars[parseInt(carSelect.value) - 1];
@@ -246,6 +243,7 @@ function positionCarOnLedge() {
     gameState.phase = 'ready';
     drawScene();
 }
+
 
 carSelect.addEventListener('input', updateCarSelection);
 speedSlider.addEventListener('input', updateSpeed);
