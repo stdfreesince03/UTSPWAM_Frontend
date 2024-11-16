@@ -136,23 +136,23 @@ function checkCollisions() {
     const carBottom = gameState.position.y + gameState.carSize.height;
     const carRight = gameState.position.x + gameState.carSize.width;
 
-    if (gameState.position.x >= ledgeX2 &&
-        carRight <= ledgeX2 + ledgeWidth2 &&
-        carBottom  >= (ledgeY2+(gameState.carSize.height/2)) &&
-        gameState.velocity.y > 0) {
-
-        gameState.position.y = ledgeY2 - gameState.carSize.height;
-        gameState.velocity.y = 0;
-        gameState.velocity.x = gameState.initialSpeed;
-        gameState.phase = 'driving';
+    if (gameState.position.x >= ledgeX2 && carRight <= ledgeX2 + ledgeWidth2) {
+        if (carBottom >= ledgeY2 && gameState.position.y < ledgeY2) {
+            if (gameState.velocity.y > 0) {
+                gameState.position.y = ledgeY2 - gameState.carSize.height;
+                gameState.velocity.y = 0;
+                gameState.velocity.x = gameState.initialSpeed;
+                gameState.phase = 'driving';
+            }
+        } else if (gameState.position.y >= ledgeY2) {
+            endGame('crash');
+        }
     }
-
 
     if (carBottom > canvas.height) {
         endGame('crash');
     }
 }
-
 function initiateJump() {
     const jumpAngle = Math.PI / 4; // 45 degrees
     const jumpSpeed = gameState.selectedCar.jumpForce;
