@@ -40,7 +40,12 @@ const LabLayout = () => {
             try{
                 await api.post('/progress',{
                         ...gameData.current,
-                    },{withCredentials:true}
+                    },{
+                    headers: {
+                            'Content-Type': 'application/json'
+                        },
+                    withCredentials:true
+                }
                 ).then(response=>{
                     console.log(response);
                 }).catch(err=>{
