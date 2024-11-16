@@ -124,32 +124,37 @@ function checkCollisions() {
     const carRight = gameState.position.x + gameState.carSize.width;
     const carLeft = gameState.position.x;
 
+    // Only check for crashes if we're in the jumping phase
+    if (gameState.phase === 'jump') {
+        // First check for successful landing on second ledge
+        if (gameState.velocity.y > 0 && // Moving downward
+            carBottom >= ledgeY2 && // At or below ledge height
+            carLeft >= ledgeX2 && // Left edge past start of ledge
+            carRight <= ledgeX2 + ledgeWidth2) { // Right edge before end of ledge
 
-    if (gameState.velocity.y > 0 &&
-        carBottom >= ledgeY2 &&
-        carLeft >= ledgeX2 &&
-        carRight <= ledgeX2 + ledgeWidth2) {
+            // Successfully landed
+            gameState.position.y = ledgeY2 - gameState.carSize.height;
+            gameState.velocity.y = 0;
+            gameState.velocity.x = gameState.initialSpeed;
+            gameState.phase = 'driving';
+            gameState.hasLanded = true;
+        }
+        // Only check for crash if we've passed the first ledge completely
+        else if (carLeft > ledgeWidth1 && ( // Past first ledge
+            carBottom > canvas.height || // Hit the ground
+            (carBottom > ledgeY2 + ledgeHeight2 && // Fell below second ledge
+                carLeft > ledgeX2 + ledgeWidth2))) { // And passed it completely
 
-        // Successfully landed
-        gameState.position.y = ledgeY2 - gameState.carSize.height;
-        gameState.velocity.y = 0;
-        gameState.velocity.x = gameState.initialSpeed;
-        gameState.phase = 'driving';
-        gameState.hasLanded = true;
+            endGame('crash');
+        }
     }
 
-    else if (carBottom > canvas.height ||
-        (carLeft > ledgeWidth1 &&
-            carBottom > ledgeY1 &&
-            !gameState.hasLanded)) {
-
-        endGame('crash');
-    }
-
-    else if (carLeft > canvas.width) {
+    // Check for success only if we're driving on the second ledge
+    if (gameState.phase === 'driving' && carLeft > canvas.width) {
         endGame('success');
     }
 }
+
 
 function initiateJump() {
     const jumpAngle = Math.PI / 4;
