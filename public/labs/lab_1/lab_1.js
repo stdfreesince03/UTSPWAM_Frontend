@@ -1,6 +1,7 @@
 
 const canvas = document.getElementById('jumpCanvas');
 const ctx = canvas.getContext('2d');
+let score = 0;
 
 function setHighDPI(canvas, context, scaleFactor = 2) {
     const originalWidth = canvas.width;
@@ -14,6 +15,7 @@ function setHighDPI(canvas, context, scaleFactor = 2) {
     context.scale(scaleFactor, scaleFactor);
     recalculateLedgePositions();
 }
+
 
 
 let ledgeWidth1, ledgeX1, ledgeHeight1, ledgeY1;
@@ -81,6 +83,7 @@ function preloadCarImage() {
 }
 
 
+
 function drawGrassyLedge() {
     ctx.fillStyle = '#228B22';
     ctx.fillRect(ledgeX1, ledgeY1, ledgeWidth1, ledgeHeight1);
@@ -94,12 +97,12 @@ function drawCar(x, y) {
 function drawScene() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawGrassyLedge();
+    drawScore();
 
 
     if (gameState.position.x < canvas.width) {
         drawCar(gameState.position.x, gameState.position.y);
     } else {
-
         endGame('success');
     }
 }
@@ -159,14 +162,21 @@ function initiateJump() {
     gameState.velocity.y = -jumpSpeed * Math.sin(jumpAngle);
 }
 
+function drawScore() {
+    ctx.font = '20px Arial';
+    ctx.fillStyle = '#333';
+    ctx.fillText(`Score: ${score}`, canvas.width - 100, 30);
+}
 
 function endGame(status) {
     gameState.phase = 'finished';
     gameState.isJumping = false;
 
     if (status === 'success') {
+        score++;
         console.log('Car made it through! Restarting...');
     } else if (status === 'crash') {
+        score--;
         console.log('Car crashed! Restarting...');
     }
 
