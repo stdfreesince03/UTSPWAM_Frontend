@@ -16,6 +16,7 @@ const BackNav = ({onReturn}) => {
     };
 
     const handleBackClick = () => {
+        console.log('handleBackClick');
         if (onReturn) {
             onReturn(); // Call onReturn function if it exists
         }

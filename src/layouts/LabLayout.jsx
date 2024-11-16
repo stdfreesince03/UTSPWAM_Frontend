@@ -35,6 +35,7 @@ const LabLayout = () => {
 
     async function dataStoreBackNav() {
         console.log('dataStoreBackNav');
+        console.log('gamedata.current' , gameData.current)
         if(userID !== null && role!==null){
             try{
                 await api.post('/progress',{
