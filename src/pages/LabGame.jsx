@@ -12,9 +12,20 @@ const LabGame = () => {
         // Fetch the initial score for this lab
         const fetchScore = async () => {
             try {
-                const response = await api.get(`/progress/${labID}`, { withCredentials: true });
+                const response = await api.get(`/progress/${labID}`,
+                    { headers:{
+                            'Content-Type': 'application/json',
+                        }
+                        ,withCredentials: true
+                    }
+                );
                 setInitialScore(response.data.score || 0);
                 handleGameData({ score: response.data.score || 0, lab_id: labID });
+
+                const iframe = document.getElementById('lab-iframe');
+                if (iframe && iframe.contentWindow) {
+                    iframe.contentWindow.postMessage({ score: fetchedScore }, window.location.origin);
+                }
             } catch (error) {
                 console.error('Error fetching initial score:', error);
             }
@@ -37,6 +48,7 @@ const LabGame = () => {
         };
 
         if (iframe) iframe.addEventListener('load', handleLoad);
+
         window.addEventListener('message', handleMessage);
 
         return () => {
